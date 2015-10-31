@@ -1,0 +1,28 @@
+package com.qualcomm.ftcrobotcontroller.opmodes;
+
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+/**
+ * Created by pev on 10/31/2015.
+ */
+public class TeleOp extends OpMode {
+    DcMotor MotorRightDrive;
+    DcMotor MotorLeftDrive;
+    DcMotor BandaMotor;
+
+    @Override
+    public void init() {
+        BandaMotor = hardwareMap.dcMotor.get("Banda_motor");
+        MotorRightDrive = hardwareMap.dcMotor.get("right_drive");
+        MotorLeftDrive = hardwareMap.dcMotor.get("left_drive");
+        MotorLeftDrive.setDirection(DcMotor.Direction.REVERSE);
+    }
+
+    @Override
+    public void loop() {
+        MotorRightDrive.setPower(-gamepad1.right_stick_y);
+        MotorLeftDrive.setPower(-gamepad1.left_stick_y);
+        BandaMotor.setPower(-gamepad2.left_stick_x);
+    }
+}
