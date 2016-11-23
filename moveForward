@@ -8,8 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class moveForward extends OpMode {
     DcMotor MotorRightDrive;
     DcMotor MotorLeftDrive;
-    DcMotor MotorRightDriveCenter;
-    DcMotor MotorLeftDriveCenter
+
 
     @Override
     public void init() {
