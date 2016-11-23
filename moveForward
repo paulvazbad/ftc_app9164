@@ -1,0 +1,31 @@
+package com.qualcomm.ftcrobotcontroller.opmodes;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+/**
+ * Created by pev para zorrobots gen3 on 23/11/2016.
+ */
+public class moveForward extends OpMode {
+    DcMotor MotorRightDrive;
+    DcMotor MotorLeftDrive;
+    DcMotor MotorRightDriveCenter;
+    DcMotor MotorLeftDriveCenter
+
+    @Override
+    public void init() {
+        MotorRightDrive = hardwareMap.dcMotor.get("right.drive");
+        MotorLeftDrive = hardwareMap.dcMotor.get("left.drive");
+        MotorLeftDrive.setDirection(DcMotor.Direction.REVERSE);
+
+    }
+    @Override
+    public void start(){
+        Defense.setPosition(1);
+        LeftTrigger.setPosition(0);
+        if (this.time <= 5) {
+            //run the motors for five seconds
+            MotorRightDrive.setPower(0.50);
+            MotorLeftDrive.setPower(0.50);
+              }
+            }
+          }
