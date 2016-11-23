@@ -20,8 +20,6 @@ public class moveForward extends OpMode {
     }
     @Override
     public void start(){
-        Defense.setPosition(1);
-        LeftTrigger.setPosition(0);
         if (this.time <= 5) {
             //run the motors for five seconds
             MotorRightDrive.setPower(0.50);
