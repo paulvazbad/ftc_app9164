@@ -9,11 +9,11 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class TeleOp extends OpMode {
     DcMotor MotorRightDrive;
     DcMotor MotorLeftDrive;
-    DcMotor BandaMotor;
+    
 
     @Override
     public void init() {
-        BandaMotor = hardwareMap.dcMotor.get("Banda_motor");
+       
         MotorRightDrive = hardwareMap.dcMotor.get("right_drive");
         MotorLeftDrive = hardwareMap.dcMotor.get("left_drive");
         MotorLeftDrive.setDirection(DcMotor.Direction.REVERSE);
@@ -23,6 +23,6 @@ public class TeleOp extends OpMode {
     public void loop() {
         MotorRightDrive.setPower(-gamepad1.right_stick_y);
         MotorLeftDrive.setPower(-gamepad1.left_stick_y);
-        BandaMotor.setPower(-gamepad2.left_stick_x);
+        
     }
 }
